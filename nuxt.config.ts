@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    baseURL: import.meta.dev ? '/' : '/steganohide/'
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
@@ -10,6 +14,13 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  nitro: {
+    preset: 'static',
+    prerender: {
+      crawlLinks: true
+    }
+  },
 
   routeRules: {
     '/': { prerender: true }
