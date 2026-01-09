@@ -27,9 +27,10 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "/steganohide",
   "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "theme_color": "#121b22",
+  "start_url": "/steganohide",
   "background_color": "#121b22",
-  "theme_color": "#4db6ac",
   "description": "Ferramenta avançada para ocultar mensagens e dados confidenciais dentro de imagens utilizando técnicas de esteganografia digital"
 }
