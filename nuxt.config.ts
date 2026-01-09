@@ -1,7 +1,11 @@
+/// <reference types="@vite-pwa/nuxt" />
+
+import { defineNuxtConfig } from 'nuxt/config'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: import.meta.dev ? '/' : '/steganohide/'
+    baseURL: '/steganohide/'
   },
 
   modules: [
@@ -29,8 +33,8 @@ export default defineNuxtConfig({
     manifest: {
       name: 'Steganohide',
       short_name: 'Steganohide',
-      start_url: import.meta.dev ? '/' : '/steganohide/',
-      scope: import.meta.dev ? '/' : '/steganohide/',
+      start_url: '/steganohide/',
+      scope: '/steganohide/',
       display: 'standalone',
       background_color: '#ffffff',
       theme_color: '#00DC82',
@@ -65,9 +69,6 @@ export default defineNuxtConfig({
       'favicon-32x32.png',
       'apple-touch-icon.png'
     ],
-    workbox: {
-      navigateFallback: import.meta.dev ? '/' : '/steganohide/200.html'
-    },
     devOptions: {
       enabled: false
     }
