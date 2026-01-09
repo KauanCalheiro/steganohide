@@ -30,47 +30,11 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifestFilename: 'site.webmanifest',
-    manifest: {
-      name: 'Steganohide',
-      short_name: 'Steganohide',
-      start_url: '/steganohide/',
-      scope: '/steganohide/',
-      display: 'standalone',
-      background_color: '#ffffff',
-      theme_color: '#00DC82',
-      icons: [
-        {
-          src: '/pwa-192x192.png',
-          sizes: '192x192',
-          type: 'image/png'
-        },
-        {
-          src: '/pwa-512x512.png',
-          sizes: '512x512',
-          type: 'image/png'
-        },
-        {
-          src: '/pwa-maskable-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-          purpose: 'maskable'
-        },
-        {
-          src: '/pwa-maskable-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-          purpose: 'maskable'
-        }
-      ]
+    injectManifest: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
-    includeAssets: [
-      'favicon.ico',
-      'favicon-16x16.png',
-      'favicon-32x32.png',
-      'apple-touch-icon.png'
-    ],
     devOptions: {
-      enabled: false
+      enabled: true
     }
   },
 
