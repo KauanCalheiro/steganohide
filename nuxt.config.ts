@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     baseURL: '/steganohide/',
     head: {
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/steganohide//favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/steganohide/favicon.ico' }
       ]
     }
   },
