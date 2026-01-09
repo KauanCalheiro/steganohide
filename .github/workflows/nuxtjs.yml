@@ -35,7 +35,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm@10
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -49,7 +50,7 @@ jobs:
             .nuxt
             .output
             ~/.pnpm-store
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
