@@ -42,7 +42,7 @@ function onChange(value: string|number) {
 </script>
 
 <template>
-    <nav class="fixed inset-x-0 bottom-4 z-50 px-6 max-w-xl mx-auto">
+    <nav class="fixed inset-x-0 bottom-0 md:bottom-8 z-50 px-6 max-w-xl mx-auto">
         <UTabs
             :items="items"
             v-model:model-value="value"
