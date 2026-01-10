@@ -4,6 +4,7 @@ export const useIcon = () => {
         encrypt: 'heroicons:lock-closed-16-solid',
         decrypt: 'heroicons:key-16-solid',
         about: 'heroicons:information-circle-solid',
+        warning: 'heroicons:exclamation-circle-16-solid',
         image: 'heroicons:photo-16-solid',
         download: 'heroicons:arrow-down-on-square-stack-20-solid',
         upload: 'heroicons:arrow-up-on-square-stack-20-solid',
@@ -17,5 +18,9 @@ export const useIcon = () => {
         back: 'heroicons:arrow-left-circle-16-solid',
         next: 'heroicons:arrow-right-circle-16-solid',
         loading: 'lucide:loader',
+        language: 'heroicons:language-16-solid',
+        info: 'heroicons:information-circle-16-solid',
+        shield: 'heroicons:shield-check-16-solid',
+        eye_closed: 'heroicons:eye-slash-16-solid'
     }
 }
