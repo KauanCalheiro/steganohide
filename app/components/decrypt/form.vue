@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { decryptSchema, type DecryptType } from '~/schemas/decrypt'
 
+const { t } = useI18n()
+
 const emit = defineEmits<{
     decoded: [message: string]
 }>()
@@ -25,13 +27,13 @@ async function onSubmit() {
         )
         emit('decoded', result.message)
         toast.success({
-            title: 'Success',
-            description: 'Message decoded successfully!'
+            title: t('common.success'),
+            description: t('decrypt.success-message')
         })
     } catch (err) {
         toast.error({
-            title: 'Error',
-            description: error.value || 'Failed to decode message'
+            title: t('common.error'),
+            description: error.value || t('decrypt.error-message')
         })
     }
 }
@@ -45,7 +47,7 @@ async function onSubmit() {
         @submit="onSubmit"
     >
         <UFormField
-            label="Image"
+            :label="$t('decrypt.image-label')"
             class="w-full"
             name="file"
         >
@@ -55,14 +57,14 @@ async function onSubmit() {
                 accept="image/*"
                 class="w-full h-fit"
                 :interactive="true"
-                label="Click or Drop to upload an image"
-                description="Upload an image with a hidden message"
+                :label="$t('decrypt.image-upload')"
+                :description="$t('decrypt.image-description')"
                 :icon="image"
             />
         </UFormField>
 
         <UFormField
-            label="Secret Key"
+            :label="$t('decrypt.secret-key-label')"
             class="w-full"
             name="secretKey"
         >
@@ -70,7 +72,7 @@ async function onSubmit() {
                 v-model="state.secretKey"
                 type="password"
                 variant="soft"
-                placeholder="Enter the secret key (optional)"
+                :placeholder="$t('decrypt.secret-key-placeholder')"
                 class="w-full"
             />
         </UFormField>
@@ -83,7 +85,7 @@ async function onSubmit() {
                 :disabled="loading"
             >
                 <template v-if="!loading">
-                    Decrypt
+                    {{ $t('common.decrypt') }}
                 </template>
                 <template v-else>
                     <AppLoading class="w-6 h-6" />

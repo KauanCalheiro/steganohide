@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 interface EncryptViewProps {
     imageUrl: string
 }
@@ -14,7 +16,8 @@ const emit = defineEmits<{
 const {
     back,
     download,
-    share
+    share,
+    warning
 } = useIcon()
 
 const toast = useToaster()
@@ -29,8 +32,8 @@ async function downloadImage() {
 async function shareImage() {
     if (!navigator.share) {
         toast.error({
-            title: 'Error',
-            description: 'Sharing is not supported on this browser'
+            title: t('common.error'),
+            description: t('common.share-not-supported')
         })
         return
     }
@@ -48,8 +51,8 @@ async function shareImage() {
     } catch (err) {
         if ((err as Error).name !== 'AbortError') {
             toast.error({
-                title: 'Error',
-                description: 'Failed to share the image'
+                title: t('common.error'),
+                description: t('common.share-failed')
             })
         }
     }
@@ -76,7 +79,7 @@ function goBack() {
                 class="w-full flex flex-row items-center justify-center"
                 @click="downloadImage"
             >
-                Download
+                {{ $t('common.download') }}
             </UButton>
 
             <UButton
@@ -85,7 +88,7 @@ function goBack() {
                 class="w-full flex flex-row items-center justify-center"
                 @click="shareImage"
             >
-                Share
+                {{ $t('common.share') }}
             </UButton>
 
             <UButton
@@ -95,5 +98,13 @@ function goBack() {
                 @click="goBack"
             />
         </div>
+
+        <UAlert
+            :icon="warning"
+            color="warning"
+            variant="soft"
+            :title="$t('about.warning.title')"
+            :description="$t('about.warning.description')"
+        />
     </div>
 </template>

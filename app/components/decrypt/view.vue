@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 interface DecryptViewProps {
     message: string
 }
@@ -25,16 +27,16 @@ async function copyMessage() {
         await navigator.clipboard.writeText(message)
         copied.value = true
         toast.success({
-            title: 'Copied',
-            description: 'Message copied to clipboard!'
+            title: t('common.copied'),
+            description: t('decrypt.copy-success')
         })
         setTimeout(() => {
             copied.value = false
         }, 2000)
     } catch {
         toast.error({
-            title: 'Error',
-            description: 'Failed to copy message'
+            title: t('common.error'),
+            description: t('decrypt.copy-error')
         })
     }
 }
@@ -48,7 +50,7 @@ function goBack() {
     <div class="flex flex-col gap-8">
         <div class="w-full">
             <UFormField
-                label="Decoded Message"
+                :label="$t('decrypt.decoded-message-label')"
                 class="w-full"
             >
                 <UTextarea
@@ -67,7 +69,7 @@ function goBack() {
                 class="w-full flex flex-row items-center justify-center"
                 @click="copyMessage"
             >
-                {{ copied ? 'Copied!' : 'Copy' }}
+                {{ copied ? $t('common.copied') : $t('common.copy') }}
             </UButton>
 
             <UButton

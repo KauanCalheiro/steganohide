@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { encryptSchema, type EncryptType } from '~/schemas/encrypt'
 
+const { t } = useI18n()
+
 const emit = defineEmits<{
     encoded: [imageUrl: string]
 }>()
@@ -26,13 +28,13 @@ async function onSubmit() {
         )
         emit('encoded', result.imageUrl)
         toast.success({
-            title: 'Success',
-            description: 'Message encoded successfully!',
+            title: t('common.success'),
+            description: t('encrypt.success-message')
         })
     } catch (err) {
         toast.error({
-            title: 'Error',
-            description: error.value || 'Failed to encode message',
+            title: t('common.error'),
+            description: error.value || t('encrypt.error-message')
         })
     }
 }
@@ -46,7 +48,7 @@ async function onSubmit() {
         @submit="onSubmit"
     >
         <UFormField
-            label="Image"
+            :label="$t('encrypt.image-label')"
             class="w-full"
             name="file"
         >
@@ -56,28 +58,28 @@ async function onSubmit() {
                 accept="image/*"
                 class="w-full h-fit"
                 :interactive="true"
-                label="Click or Drop to upload an image"
-                description="Accepted formats: PNG, JPG, JPEG, GIF, WEBP, SVG..."
+                :label="$t('encrypt.image-upload')"
+                :description="$t('encrypt.image-description')"
                 :icon="image"
             />
         </UFormField>
 
         <UFormField
-            label="Message"
+            :label="$t('encrypt.message-label')"
             class="w-full"
             name="message"
         >
             <UTextarea
                 v-model="state.message"
                 variant="soft"
-                placeholder="Enter the message to encrypt"
+                :placeholder="$t('encrypt.message-placeholder')"
                 class="w-full"
                 autoresize
             />
         </UFormField>
 
         <UFormField
-            label="Secret Key"
+            :label="$t('encrypt.secret-key-label')"
             class="w-full"
             name="secretKey"
         >
@@ -85,7 +87,7 @@ async function onSubmit() {
                 v-model="state.secretKey"
                 type="password"
                 variant="soft"
-                placeholder="Enter a secret key (optional)"
+                :placeholder="$t('encrypt.secret-key-placeholder')"
                 class="w-full"
             />
         </UFormField>
@@ -98,7 +100,7 @@ async function onSubmit() {
                 :disabled="loading"
             >
                 <template v-if="!loading">
-                    Encrypt
+                    {{ $t('common.encrypt') }}
                 </template>
                 <template v-else>
                     <AppLoading class="w-6 h-6" />
