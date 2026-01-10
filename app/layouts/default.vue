@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="min-h-100dvh">
     <Header />
 
-    <main class="mx-auto max-w-3xl w-full px-4 min-h-90dvh mb-8">
+    <main class="mx-auto max-w-3xl w-full h-full px-4 mb-8">
       <slot />
     </main>
 
