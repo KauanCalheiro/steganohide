@@ -1,48 +1,46 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 interface NavbarItem {
-  label: string
-  value: string
-  icon: string
+    label: string
+    value: string
+    icon: string
 }
 
 const {
     isMobile
-} = useDevice();
+} = useDevice()
 
 const {
     encrypt,
     decrypt,
     about,
-    setting,
-} = useIcon();
+    setting
+} = useIcon()
 
-const items = ref<NavbarItem[]>([
-    { label: label('Encrypt'), value: '/encrypt', icon: encrypt },
-    { label: label('Decrypt'), value: '/decrypt', icon: decrypt },
-    { label: label('About'), value: '/about', icon: about },
-    { label: label('Settings'), value: '/setting', icon: setting }
+const items = computed<NavbarItem[]>(() => [
+    { label: isMobile.value ? '' : t('common.encrypt'), value: '/encrypt', icon: encrypt },
+    { label: isMobile.value ? '' : t('common.decrypt'), value: '/decrypt', icon: decrypt },
+    { label: isMobile.value ? '' : t('about.title'), value: '/about', icon: about },
+    { label: isMobile.value ? '' : t('settings.title'), value: '/setting', icon: setting }
 ])
 
-const route = useRoute();
+const route = useRoute()
 
-const match = computed<string>((): string  => {
-    const match = items.value.find(i => i.value === route.path);
-    return match ? match.value : '/encrypt';
-});
+const match = computed<string>((): string => {
+    const matched = items.value.find(i => i.value === route.path)
+    return matched ? matched.value : '/encrypt'
+})
 
-const value = ref<string>(match.value);
+const value = ref<string>(match.value)
 
-function label(label: string): string {
-    return (computed(() => isMobile.value ? '' : label) as unknown) as string;
-}
-
-function onChange(value: string|number) {
-    navigateTo((value as string));
+function onChange(value: string | number) {
+    navigateTo((value as string))
 }
 </script>
 
 <template>
-    <nav class="fixed inset-x-0 bottom-0 md:bottom-8 z-50 px-6 max-w-xl mx-auto">
+    <nav class="fixed inset-x-0 bottom-0 md:bottom-8 z-50 px-6 max-w-3xl mx-auto">
         <UTabs
             :items="items"
             v-model:model-value="value"
