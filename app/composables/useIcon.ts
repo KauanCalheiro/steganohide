@@ -21,6 +21,9 @@ export const useIcon = () => {
         language: 'heroicons:language-16-solid',
         info: 'heroicons:information-circle-16-solid',
         shield: 'heroicons:shield-check-16-solid',
-        eye_closed: 'heroicons:eye-slash-16-solid'
+        eye: 'heroicons:eye-16-solid',
+        eye_closed: 'heroicons:eye-slash-16-solid',
+        circle_check: 'heroicons:check-circle-16-solid',
+        circle_x: 'heroicons:x-circle-16-solid'
     }
 }

@@ -21,8 +21,8 @@
         "image-description": "Accepted formats: PNG, JPG, JPEG, GIF, WEBP, SVG...",
         "message-label": "Message",
         "message-placeholder": "Enter the message to encrypt",
-        "secret-key-label": "Secret Key",
-        "secret-key-placeholder": "Enter a secret key (optional)",
+        "password-label": "Password",
+        "password-placeholder": "Enter a password (optional)",
         "success-message": "Message encoded successfully!",
         "error-message": "Failed to encode message"
     },
@@ -31,8 +31,8 @@
         "image-label": "Image",
         "image-upload": "Click or Drop to upload an image",
         "image-description": "Upload an image with a hidden message",
-        "secret-key-label": "Secret Key",
-        "secret-key-placeholder": "Enter the secret key (optional)",
+        "password-label": "Password",
+        "password-placeholder": "Enter the password (optional)",
         "decoded-message-label": "Decoded Message",
         "success-message": "Message decoded successfully!",
         "error-message": "Failed to decode message",
@@ -66,5 +66,25 @@
     "languages": {
         "en": "English",
         "pt-BR": "Português (Brasil)"
+    },
+    "password": {
+        "show": "Show password",
+        "hide": "Hide password",
+        "must-contain": "Must contain",
+        "requirement-met": "Requirement met",
+        "requirement-not-met": "Requirement not met",
+        "strength": {
+            "enter": "Enter a password",
+            "weak": "Weak password",
+            "medium": "Medium password",
+            "strong": "Strong password"
+        },
+        "requirements": {
+            "min-length": "At least 8 characters",
+            "number": "At least 1 number",
+            "lowercase": "At least 1 lowercase letter",
+            "uppercase": "At least 1 uppercase letter",
+            "special": "At least 1 special character"
+        }
     }
 }

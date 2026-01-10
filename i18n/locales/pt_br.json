@@ -21,8 +21,8 @@
         "image-description": "Formatos aceitos: PNG, JPG, JPEG, GIF, WEBP, SVG...",
         "message-label": "Mensagem",
         "message-placeholder": "Digite a mensagem para criptografar",
-        "secret-key-label": "Chave Secreta",
-        "secret-key-placeholder": "Digite uma chave secreta (opcional)",
+        "password-label": "Senha",
+        "password-placeholder": "Digite uma senha (opcional)",
         "success-message": "Mensagem codificada com sucesso!",
         "error-message": "Falha ao codificar mensagem"
     },
@@ -31,8 +31,8 @@
         "image-label": "Imagem",
         "image-upload": "Clique ou arraste para enviar uma imagem",
         "image-description": "Envie uma imagem com uma mensagem oculta",
-        "secret-key-label": "Chave Secreta",
-        "secret-key-placeholder": "Digite a chave secreta (opcional)",
+        "password-label": "Senha",
+        "password-placeholder": "Digite a senha (opcional)",
         "decoded-message-label": "Mensagem Decodificada",
         "success-message": "Mensagem decodificada com sucesso!",
         "error-message": "Falha ao decodificar mensagem",
@@ -66,5 +66,25 @@
     "languages": {
         "en": "English",
         "pt-BR": "Português (Brasil)"
+    },
+    "password": {
+        "show": "Mostrar senha",
+        "hide": "Ocultar senha",
+        "must-contain": "Deve conter",
+        "requirement-met": "Requisito atendido",
+        "requirement-not-met": "Requisito não atendido",
+        "strength": {
+            "enter": "Digite uma senha",
+            "weak": "Senha fraca",
+            "medium": "Senha média",
+            "strong": "Senha forte"
+        },
+        "requirements": {
+            "min-length": "No mínimo 8 caracteres",
+            "number": "No mínimo 1 número",
+            "lowercase": "No mínimo 1 letra minúscula",
+            "uppercase": "No mínimo 1 letra maiúscula",
+            "special": "No mínimo 1 caractere especial"
+        }
     }
 }

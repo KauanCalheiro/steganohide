@@ -79,16 +79,14 @@ async function onSubmit() {
         </UFormField>
 
         <UFormField
-            :label="$t('encrypt.secret-key-label')"
+            :label="$t('encrypt.password-label')"
             class="w-full"
             name="secretKey"
         >
-            <UInput
+            <PasswordInput
                 v-model="state.secretKey"
-                type="password"
-                variant="soft"
-                :placeholder="$t('encrypt.secret-key-placeholder')"
-                class="w-full"
+                :placeholder="$t('encrypt.password-placeholder')"
+                :show-strength="true"
             />
         </UFormField>
 
