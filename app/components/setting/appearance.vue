@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { color_palette } = useIcon();
+const { color_palette } = useIcon()
 </script>
 
 <template>
@@ -8,23 +8,24 @@ const { color_palette } = useIcon();
             variant="soft"
             class="w-full"
         >
-            <div class="flex flex-col gap-4 w-full">
+            <div class="flex flex-col gap-8 w-full">
                 <div>
-                    <AppTitle class="gap-2">
+                    <AppTitle class="gap-4">
                         <UBadge
                             variant="solid"
                             size="xl"
                             :icon="color_palette"
+                            color="info"
                         />
-                        Appearance
+                        {{ $t('settings.appearance') }}
                     </AppTitle>
                 </div>
 
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-4">
                     <AppSubtitle class="font-bold">
-                        Color Mode
+                        {{ $t('settings.color-mode') }}
                     </AppSubtitle>
-                    <ColorModeSwitch />
+                    <ColorModeSwitch color="info" />
                 </div>
             </div>
         </UCard>
