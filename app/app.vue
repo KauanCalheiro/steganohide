@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
@@ -8,13 +8,22 @@ useHead({
     { name: 'apple-mobile-web-app-title', content: 'Steganohide' }
   ],
 })
+
+import type { ToasterProps } from '@nuxt/ui';
+
+const toaster = ref<ToasterProps>({
+    position: 'top-center',
+    expand: false,
+})
 </script>
 
 <template>
-  <UApp>
-    <NuxtPwaAssets />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </UApp>
+    <UApp
+        :toaster="toaster"
+    >
+        <NuxtPwaAssets />
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
+    </UApp>
 </template>

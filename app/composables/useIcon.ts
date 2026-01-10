@@ -14,5 +14,8 @@ export const useIcon = () => {
         color_palette: 'heroicons:swatch-16-solid',
         dark: 'heroicons:moon-16-solid',
         light: 'heroicons:sun-16-solid',
+        back: 'heroicons:arrow-left-circle-16-solid',
+        next: 'heroicons:arrow-right-circle-16-solid',
+        loading: 'lucide:loader',
     }
 }
