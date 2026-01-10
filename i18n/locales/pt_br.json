@@ -1,0 +1,70 @@
+{
+    "common": {
+        "encrypt": "Criptografar",
+        "decrypt": "Descriptografar",
+        "download": "Baixar",
+        "share": "Compartilhar",
+        "copy": "Copiar",
+        "copied": "Copiado!",
+        "back": "Voltar",
+        "success": "Sucesso",
+        "error": "Erro"
+    },
+    "home": {
+        "title": "Steganohide",
+        "description": "Esconda seus segredos em imagens"
+    },
+    "encrypt": {
+        "title": "Criptografar",
+        "image-label": "Imagem",
+        "image-upload": "Clique ou arraste para enviar uma imagem",
+        "image-description": "Formatos aceitos: PNG, JPG, JPEG, GIF, WEBP, SVG...",
+        "message-label": "Mensagem",
+        "message-placeholder": "Digite a mensagem para criptografar",
+        "secret-key-label": "Chave Secreta",
+        "secret-key-placeholder": "Digite uma chave secreta (opcional)",
+        "success-message": "Mensagem codificada com sucesso!",
+        "error-message": "Falha ao codificar mensagem"
+    },
+    "decrypt": {
+        "title": "Descriptografar",
+        "image-label": "Imagem",
+        "image-upload": "Clique ou arraste para enviar uma imagem",
+        "image-description": "Envie uma imagem com uma mensagem oculta",
+        "secret-key-label": "Chave Secreta",
+        "secret-key-placeholder": "Digite a chave secreta (opcional)",
+        "decoded-message-label": "Mensagem Decodificada",
+        "success-message": "Mensagem decodificada com sucesso!",
+        "error-message": "Falha ao decodificar mensagem",
+        "copy-success": "Mensagem copiada para a área de transferência!",
+        "copy-error": "Falha ao copiar mensagem"
+    },
+    "settings": {
+        "title": "Configurações",
+        "appearance": "Aparência",
+        "color-mode": "Modo de Cor",
+        "language": "Idioma",
+        "language-description": "Selecione seu idioma preferido"
+    },
+    "about": {
+        "title": "Sobre",
+        "what-is": {
+            "title": "O que é Esteganografia?",
+            "description": "Esteganografia é a prática de esconder informações secretas dentro de um arquivo ou mensagem comum e não secreta para evitar detecção. Diferente da criptografia, que torna os dados ilegíveis, a esteganografia oculta a própria existência da mensagem secreta. O termo vem das palavras gregas 'steganos' (coberto) e 'graphein' (escrever)."
+        },
+        "how-it-works": {
+            "title": "Como o Steganohide funciona?",
+            "step-1": "Seleção da Imagem: Você envia uma imagem que servirá como 'portadora' da sua mensagem oculta.",
+            "step-2": "Codificação da Mensagem: Sua mensagem secreta é convertida em binário e incorporada nos bits menos significativos (LSB) dos pixels da imagem. Essa modificação é imperceptível ao olho humano.",
+            "step-3": "Criptografia Opcional: Você pode adicionar uma chave secreta para criptografar sua mensagem antes de incorporá-la, adicionando uma camada extra de segurança."
+        },
+        "warning": {
+            "title": "Aviso Importante",
+            "description": "Muitos aplicativos de mensagens (como WhatsApp, Telegram, Instagram, etc.) comprimem automaticamente as imagens ao enviá-las. Essa compressão pode corromper ou destruir completamente a mensagem oculta incorporada na imagem. Para preservar sua mensagem secreta, sempre compartilhe a imagem como arquivo/documento em vez de foto comum, ou use serviços de armazenamento em nuvem para compartilhar a imagem original sem compressão."
+        }
+    },
+    "languages": {
+        "en": "English",
+        "pt-BR": "Português (Brasil)"
+    }
+}

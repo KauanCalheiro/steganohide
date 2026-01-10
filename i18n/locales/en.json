@@ -1,0 +1,70 @@
+{
+    "common": {
+        "encrypt": "Encrypt",
+        "decrypt": "Decrypt",
+        "download": "Download",
+        "share": "Share",
+        "copy": "Copy",
+        "copied": "Copied!",
+        "back": "Back",
+        "success": "Success",
+        "error": "Error"
+    },
+    "home": {
+        "title": "Steganohide",
+        "description": "Hide your secrets in images"
+    },
+    "encrypt": {
+        "title": "Encrypt",
+        "image-label": "Image",
+        "image-upload": "Click or Drop to upload an image",
+        "image-description": "Accepted formats: PNG, JPG, JPEG, GIF, WEBP, SVG...",
+        "message-label": "Message",
+        "message-placeholder": "Enter the message to encrypt",
+        "secret-key-label": "Secret Key",
+        "secret-key-placeholder": "Enter a secret key (optional)",
+        "success-message": "Message encoded successfully!",
+        "error-message": "Failed to encode message"
+    },
+    "decrypt": {
+        "title": "Decrypt",
+        "image-label": "Image",
+        "image-upload": "Click or Drop to upload an image",
+        "image-description": "Upload an image with a hidden message",
+        "secret-key-label": "Secret Key",
+        "secret-key-placeholder": "Enter the secret key (optional)",
+        "decoded-message-label": "Decoded Message",
+        "success-message": "Message decoded successfully!",
+        "error-message": "Failed to decode message",
+        "copy-success": "Message copied to clipboard!",
+        "copy-error": "Failed to copy message"
+    },
+    "settings": {
+        "title": "Settings",
+        "appearance": "Appearance",
+        "color-mode": "Color Mode",
+        "language": "Language",
+        "language-description": "Select your preferred language"
+    },
+    "about": {
+        "title": "About",
+        "what-is": {
+            "title": "What is Steganography?",
+            "description": "Steganography is the practice of hiding secret information within an ordinary, non-secret file or message to avoid detection. Unlike encryption, which makes data unreadable, steganography conceals the very existence of the secret message. The term comes from the Greek words 'steganos' (covered) and 'graphein' (to write)."
+        },
+        "how-it-works": {
+            "title": "How does Steganohide work?",
+            "step-1": "Image Selection: You upload an image that will serve as the 'carrier' for your hidden message.",
+            "step-2": "Message Encoding: Your secret message is converted to binary and embedded into the least significant bits (LSB) of the image pixels. This modification is imperceptible to the human eye.",
+            "step-3": "Optional Encryption: You can add a secret key to encrypt your message before embedding it, adding an extra layer of security."
+        },
+        "warning": {
+            "title": "Important Warning",
+            "description": "Many messaging apps (such as WhatsApp, Telegram, Instagram, etc.) automatically compress images when sending them. This compression can corrupt or completely destroy the hidden message embedded in the image. To preserve your secret message, always share the image as a file/document instead of a regular photo, or use cloud storage services to share the original uncompressed image."
+        }
+    },
+    "languages": {
+        "en": "English",
+        "pt-BR": "Português (Brasil)"
+    }
+}
