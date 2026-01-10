@@ -17,6 +17,7 @@
     "@iconify-json/simple-icons": "^1.2.63",
     "@nuxt/image": "2.0.0",
     "@nuxt/ui": "^4.3.0",
+    "@nuxtjs/i18n": "^10.2.1",
     "crypto-js": "^4.2.0",
     "nuxt": "^4.2.2",
     "zod": "^4.3.5"

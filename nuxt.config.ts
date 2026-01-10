@@ -24,8 +24,23 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/eslint',
         '@nuxt/ui',
-        '@vite-pwa/nuxt'
+        '@vite-pwa/nuxt',
+        '@nuxtjs/i18n'
     ],
+
+    i18n: {
+        defaultLocale: 'en',
+        strategy: 'no_prefix',
+        locales: [
+            { code: 'pt_br', file: 'pt_br.json', },
+            { code: 'en', file: 'en.json', },
+        ],
+        detectBrowserLanguage: {
+            useCookie: true,
+            cookieKey: 'i18n_redirected',
+            fallbackLocale: 'en'
+        }
+    },
 
     devtools: {
         enabled: true
