@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-dvh">
+  <div>
     <Header />
 
     <main class="mx-auto w-fit max-w-xl px-4">

@@ -14,12 +14,7 @@
     --ui-radius: 0.6rem;
 }
 
-html {
-    height: 100%;
-}
-
 body {
-    min-height: 100dvh;
     padding: var(--safe-top) var(--safe-right) var(--safe-bottom)
         var(--safe-left);
     box-sizing: border-box;
