@@ -13,6 +13,8 @@ useHead({
 <template>
   <UApp>
     <NuxtPwaAssets />
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
