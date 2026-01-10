@@ -11,5 +11,8 @@ export const useIcon = () => {
         copy: 'heroicons:document-duplicate-16-solid',
         success: 'heroicons:check-badge-16-solid',
         qr_code: 'heroicons:qr-code-16-solid',
+        color_palette: 'heroicons:swatch-16-solid',
+        dark: 'heroicons:moon-16-solid',
+        light: 'heroicons:sun-16-solid',
     }
 }

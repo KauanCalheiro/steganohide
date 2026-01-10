@@ -2,7 +2,5 @@
 </script>
 
 <template>
-    <div>
-        SETTING PAGE
-    </div>
+    <Setting />
 </template>
