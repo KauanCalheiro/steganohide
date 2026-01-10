@@ -2,7 +2,7 @@
   <div>
     <Header />
 
-    <main class="mx-auto w-fit max-w-xl px-4">
+    <main class="mx-auto max-w-xl w-full px-4">
       <slot />
     </main>
 
