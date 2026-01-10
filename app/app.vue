@@ -12,7 +12,7 @@ useHead({
 import type { ToasterProps } from '@nuxt/ui';
 
 const toaster = ref<ToasterProps>({
-    position: 'top-center',
+    position: 'bottom-center',
     expand: false,
 })
 </script>
