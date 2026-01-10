@@ -14,8 +14,21 @@
     --ui-radius: 0.6rem;
 }
 
+html {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
 body {
     padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
     box-sizing: border-box;
     height: 100%;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    overscroll-behavior: none;
+}
+
+input, textarea, select, button {
+    font-size: 16px !important;
 }
