@@ -5,8 +5,15 @@ interface SteganographyResult {
 }
 
 interface DecodeResult {
-    message: string
+    type: 'text' | 'file'
+    message?: string
+    fileName?: string
+    fileData?: Uint8Array
 }
+
+type EncodePayload =
+    | { type: 'text'; data: string }
+    | { type: 'file'; data: ArrayBuffer; fileName: string }
 
 export const useSteganography = () => {
     const isProcessing = ref(false)
@@ -52,7 +59,7 @@ export const useSteganography = () => {
 
     const encode = async (
         file: File,
-        message: string,
+        payload: EncodePayload,
         secretKey?: string
     ): Promise<SteganographyResult> => {
         isProcessing.value = true
@@ -88,12 +95,24 @@ export const useSteganography = () => {
                     reject(new Error(err.message))
                 }
 
-                workerInstance.postMessage({
-                    imageData,
-                    message,
-                    secretKey,
-                    mode: 'encode'
-                })
+                if (payload.type === 'text') {
+                    workerInstance.postMessage({
+                        imageData,
+                        contentType: 'text',
+                        message: payload.data,
+                        secretKey,
+                        mode: 'encode'
+                    })
+                } else {
+                    workerInstance.postMessage({
+                        imageData,
+                        contentType: 'file',
+                        fileData: payload.data,
+                        fileName: payload.fileName,
+                        secretKey,
+                        mode: 'encode'
+                    }, [payload.data])
+                }
             })
         } catch (err) {
             isProcessing.value = false
@@ -117,8 +136,19 @@ export const useSteganography = () => {
                 workerInstance.onmessage = (event) => {
                     const response = event.data
 
-                    if (response.success && response.message) {
-                        resolve({ message: response.message })
+                    if (response.success) {
+                        if (response.contentType === 'file') {
+                            resolve({
+                                type: 'file',
+                                fileName: response.fileName,
+                                fileData: response.fileData
+                            })
+                        } else {
+                            resolve({
+                                type: 'text',
+                                message: response.message
+                            })
+                        }
                     } else {
                         reject(new Error(response.error || 'Decoding failed'))
                     }
@@ -144,6 +174,18 @@ export const useSteganography = () => {
         }
     }
 
+    const downloadFile = (fileName: string, fileData: Uint8Array) => {
+        const blob = new Blob([new Uint8Array(fileData)])
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = fileName
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+        URL.revokeObjectURL(url)
+    }
+
     const terminateWorker = () => {
         if (worker) {
             worker.terminate()
@@ -160,6 +202,7 @@ export const useSteganography = () => {
         error: readonly(error),
         encode,
         decode,
+        downloadFile,
         terminateWorker
     }
 }
