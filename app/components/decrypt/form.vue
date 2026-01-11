@@ -3,8 +3,15 @@ import { decryptSchema, type DecryptType } from '~/schemas/decrypt'
 
 const { t } = useI18n()
 
+interface DecodedContent {
+    type: 'text' | 'file'
+    message?: string
+    fileName?: string
+    fileData?: Uint8Array
+}
+
 const emit = defineEmits<{
-    decoded: [message: string]
+    decoded: [content: DecodedContent]
 }>()
 
 const {
@@ -25,7 +32,20 @@ async function onSubmit() {
             state.file,
             state.secretKey
         )
-        emit('decoded', result.message)
+
+        if (result.type === 'file') {
+            emit('decoded', {
+                type: 'file',
+                fileName: result.fileName,
+                fileData: result.fileData
+            })
+        } else {
+            emit('decoded', {
+                type: 'text',
+                message: result.message
+            })
+        }
+
         toast.success({
             title: t('common.success'),
             description: t('decrypt.success-message')

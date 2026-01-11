@@ -1,26 +1,33 @@
 <script setup lang="ts">
-const decodedMessage = ref<string | null>(null)
+interface DecodedContent {
+    type: 'text' | 'file'
+    message?: string
+    fileName?: string
+    fileData?: Uint8Array
+}
 
-const hasDecodedMessage = computed(() => !!decodedMessage.value)
+const decodedContent = ref<DecodedContent | null>(null)
 
-function onDecoded(message: string) {
-    decodedMessage.value = message
+const hasDecodedContent = computed(() => !!decodedContent.value)
+
+function onDecoded(content: DecodedContent) {
+    decodedContent.value = content
 }
 
 function onReset() {
-    decodedMessage.value = null
+    decodedContent.value = null
 }
 </script>
 
 <template>
     <div>
         <DecryptForm
-            v-if="!hasDecodedMessage"
+            v-if="!hasDecodedContent"
             @decoded="onDecoded"
         />
         <DecryptView
             v-else
-            :message="decodedMessage!"
+            :content="decodedContent!"
             @reset="onReset"
         />
     </div>
