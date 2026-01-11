@@ -19,12 +19,17 @@
         "image-label": "Image",
         "image-upload": "Click or Drop to upload an image",
         "image-description": "Accepted formats: PNG, JPG, JPEG, GIF, WEBP, SVG...",
+        "content-label": "Content to Hide",
+        "tab-text": "Text",
+        "tab-file": "File",
         "message-label": "Message",
         "message-placeholder": "Enter the message to encrypt",
+        "file-upload": "Click or Drop to upload a file",
+        "file-description": "Any file type accepted",
         "password-label": "Password",
         "password-placeholder": "Enter a password (optional)",
-        "success-message": "Message encoded successfully!",
-        "error-message": "Failed to encode message"
+        "success-message": "Content encoded successfully!",
+        "error-message": "Failed to encode content"
     },
     "decrypt": {
         "title": "Decrypt",
@@ -34,10 +39,13 @@
         "password-label": "Password",
         "password-placeholder": "Enter the password (optional)",
         "decoded-message-label": "Decoded Message",
-        "success-message": "Message decoded successfully!",
-        "error-message": "Failed to decode message",
+        "decoded-file-label": "Decoded File",
+        "success-message": "Content decoded successfully!",
+        "error-message": "Failed to decode content",
         "copy-success": "Message copied to clipboard!",
-        "copy-error": "Failed to copy message"
+        "copy-error": "Failed to copy message",
+        "download-success": "File downloaded successfully!",
+        "download-error": "Failed to download file"
     },
     "settings": {
         "title": "Settings",

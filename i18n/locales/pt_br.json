@@ -19,12 +19,17 @@
         "image-label": "Imagem",
         "image-upload": "Clique ou arraste para enviar uma imagem",
         "image-description": "Formatos aceitos: PNG, JPG, JPEG, GIF, WEBP, SVG...",
+        "content-label": "Conteúdo a Esconder",
+        "tab-text": "Texto",
+        "tab-file": "Arquivo",
         "message-label": "Mensagem",
         "message-placeholder": "Digite a mensagem para criptografar",
+        "file-upload": "Clique ou arraste para enviar um arquivo",
+        "file-description": "Qualquer tipo de arquivo aceito",
         "password-label": "Senha",
         "password-placeholder": "Digite uma senha (opcional)",
-        "success-message": "Mensagem codificada com sucesso!",
-        "error-message": "Falha ao codificar mensagem"
+        "success-message": "Conteúdo codificado com sucesso!",
+        "error-message": "Falha ao codificar conteúdo"
     },
     "decrypt": {
         "title": "Descriptografar",
@@ -34,10 +39,13 @@
         "password-label": "Senha",
         "password-placeholder": "Digite a senha (opcional)",
         "decoded-message-label": "Mensagem Decodificada",
-        "success-message": "Mensagem decodificada com sucesso!",
-        "error-message": "Falha ao decodificar mensagem",
+        "decoded-file-label": "Arquivo Decodificado",
+        "success-message": "Conteúdo decodificado com sucesso!",
+        "error-message": "Falha ao decodificar conteúdo",
         "copy-success": "Mensagem copiada para a área de transferência!",
-        "copy-error": "Falha ao copiar mensagem"
+        "copy-error": "Falha ao copiar mensagem",
+        "download-success": "Arquivo baixado com sucesso!",
+        "download-error": "Falha ao baixar arquivo"
     },
     "settings": {
         "title": "Configurações",
