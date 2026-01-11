@@ -50,6 +50,7 @@ async function onSubmit() {
             :label="$t('decrypt.image-label')"
             class="w-full"
             name="file"
+            required
         >
             <UFileUpload
                 v-model="state.file"

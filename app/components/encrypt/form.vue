@@ -51,6 +51,7 @@ async function onSubmit() {
             :label="$t('encrypt.image-label')"
             class="w-full"
             name="file"
+            required
         >
             <UFileUpload
                 v-model="state.file"
@@ -68,6 +69,7 @@ async function onSubmit() {
             :label="$t('encrypt.message-label')"
             class="w-full"
             name="message"
+            required
         >
             <UTextarea
                 v-model="state.message"
